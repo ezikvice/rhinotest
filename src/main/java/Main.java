@@ -17,7 +17,8 @@ public class Main {
         // create a JavaScript engine
         ScriptEngine rhino = factory.getEngineByName("JavaScript");
         try {
-            rhino.eval("2+2");
+            rhino.put("myJsObj", obj);
+            rhino.eval("print(myJsObj)");
         } catch (ScriptException e) {
             e.printStackTrace();
         }
