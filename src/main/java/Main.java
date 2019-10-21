@@ -18,7 +18,8 @@ public class Main {
         ScriptEngine rhino = factory.getEngineByName("JavaScript");
         try {
             rhino.put("myJsObj", obj);
-            rhino.eval("print(myJsObj)");
+            Object x = rhino.eval("print(myJsObj)");
+            System.out.println(x);
         } catch (ScriptException e) {
             e.printStackTrace();
         }
